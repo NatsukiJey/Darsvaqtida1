@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: #f3f6fb;
+    color: #172033;
+    font-family: system-ui, sans-serif;
+}
+
+.animation {
+    width: min(100% - 32px, 440px);
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: 1.6rem;
+}
+
+.stage {
+    position: relative;
+    width: 300px;
+    height: 220px;
+    margin: 0 auto 24px;
+    border: 1px solid #d5dce8;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.point,
+.box {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+}
+
+.point {
+    display: grid;
+    place-items: center;
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    color: #64748b;
+}
+
+.point-1,
+.box {
+    top: 20px;
+    left: 220px;
+}
+
+.point-2 {
+    top: 20px;
+    left: 32px;
+}
+
+.point-3 {
+    top: 152px;
+    left: 32px;
+}
+
+.point-4 {
+    top: 152px;
+    left: 220px;
+}
+
+.box {
+    z-index: 1;
+    border-radius: 10px;
+    background: #4f7cff;
+    box-shadow: 0 6px 16px #4f7cff55;
+    transition: left 1.2s ease-in-out, top 1.2s ease-in-out;
+}
+
+.box.at-2 {
+    top: 20px;
+    left: 32px;
+}
+
+.box.at-3 {
+    top: 152px;
+    left: 32px;
+}
+
+.box.at-4 {
+    top: 152px;
+    left: 220px;
+}
+
+.start-button {
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 10px;
+    background: #315ee8;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.start-button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.status {
+    min-height: 1.5em;
+    margin: 12px 0 0;
+    color: #526078;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .box {
+        transition-duration: 0.01ms;
+    }
+}
